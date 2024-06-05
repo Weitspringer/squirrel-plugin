@@ -17,7 +17,7 @@
 #include "src/slurmctld/slurmctld.h"
 #include "src/plugins/sched/squirrel/squirrel.h"
 
-const char		plugin_name[]	= "Slurm carbon-aware Scheduler plugin";
+const char		plugin_name[]	= "Slurm Squirrel Scheduler plugin";
 const char		plugin_type[]	= "sched/squirrel";
 const uint32_t		plugin_version	= SLURM_VERSION_NUMBER;
 
