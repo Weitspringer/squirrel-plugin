@@ -37,7 +37,7 @@ int init(void)
 	}
 
 	/* since we do a join on this later we don't make it detached */
-	slurm_thread_create(&squirrel_thread, builtin_agent, NULL);
+	slurm_thread_create(&squirrel_thread, squirrel_agent, NULL);
 
 	slurm_mutex_unlock( &thread_flag_mutex );
 
