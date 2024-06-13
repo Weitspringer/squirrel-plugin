@@ -5,7 +5,7 @@ Unlock the power of sustainable computing with Squirrel, a carbon-aware schedule
 Before building and installing the Slurm scheduler plugin, ensure that the following packages and tools are installed on your system:
 
 ### Slurm
-Ensure you are using at least version `slurm-23-02-0-1`, as this is the minimum required version for compatibility with this plugin. You need access to the source code.
+Ensure you are using at least version `slurm-23-02-0-1` for the Slurm control node, as this is the minimum required version for compatibility with this plugin. You also need access to the source code.
 
 ### General Development Tools
 - **C Compiler**: A C compiler like GCC (GNU Compiler Collection) is required for compiling the source code.
