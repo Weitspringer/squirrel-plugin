@@ -14,7 +14,7 @@ extern void *squirrel_agent(void *args);
 
 /* Terminate squirrel_agent */
 extern void stop_squirrel_agent(void);
-    
+
 /* Note that slurm.conf has changed */
 extern void squirrel_reconfig(void);
 

@@ -11,7 +11,7 @@
 
 #include "src/common/plugin.h"
 #include "src/common/log.h"
-#include "src/interfaces/select.h"
+#include "src/common/node_select.h"
 #include "src/slurmctld/job_scheduler.h"
 #include "src/slurmctld/reservation.h"
 #include "src/slurmctld/slurmctld.h"
@@ -50,7 +50,8 @@ void fini(void)
 	if ( squirrel_thread ) {
 		verbose( "Squirrel scheduler plugin shutting down" );
 		stop_squirrel_agent();
-		slurm_thread_join(squirrel_thread);
+		pthread_join(squirrel_thread, NULL);
+		squirrel_thread = 0;
 	}
 	slurm_mutex_unlock( &thread_flag_mutex );
 }
