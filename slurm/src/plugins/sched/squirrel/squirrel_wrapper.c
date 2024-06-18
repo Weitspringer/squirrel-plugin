@@ -1,5 +1,5 @@
 /*****************************************************************************\
- *  squirrel.c - NO-OP plugin for carbon aware scheduler.
+ *  squirrel.c - Carbon aware scheduler plugin.
  *****************************************************************************
  *  Produced at University of Potsdam, Hasso Plattner Institute.
  *  Written by Luca Springer <luca.springer@student.hpi.de>
@@ -17,7 +17,7 @@
 #include "src/slurmctld/slurmctld.h"
 #include "src/plugins/sched/squirrel/squirrel.h"
 
-const char		plugin_name[]	= "Slurm Squirrel Scheduler plugin";
+const char		plugin_name[]	= "Slurm Built-in Scheduler plugin";
 const char		plugin_type[]	= "sched/squirrel";
 const uint32_t		plugin_version	= SLURM_VERSION_NUMBER;
 
@@ -50,7 +50,8 @@ void fini(void)
 	if ( squirrel_thread ) {
 		verbose( "Squirrel scheduler plugin shutting down" );
 		stop_squirrel_agent();
-		slurm_thread_join(squirrel_thread);
+		pthread_join(squirrel_thread, NULL);
+		squirrel_thread = 0;
 	}
 	slurm_mutex_unlock( &thread_flag_mutex );
 }
