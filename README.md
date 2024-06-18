@@ -1,14 +1,14 @@
 # Squirrel - Carbon-Aware Slurm Scheduling
-Unlock the power of sustainable computing with Squirrel, a carbon-aware scheduler plugin for Slurm. Optimize your workload distribution with a focus on reducing the environmental impact of your computing tasks.
+Unlock the power of sustainable computing with Squirrel, a carbon-aware scheduler plugin for Slurm. Optimize your workload distribution to reduce the environmental impact of your computing tasks.
 
 ## Requirements
 Before building and installing the Slurm scheduler plugin, ensure that the following packages and tools are installed on your system:
 
 ### Slurm
-Ensure you are using at least version `slurm-23-02-0-1` for the Slurm control node, as this is the minimum required version for compatibility with this plugin. You also need access to the source code.
+Ensure you use this repository's correct branch/tag corresponding to your Slurm version, e.g., `slurm-24-05-0-1`. You also need access to the source code.
 
 ### General Development Tools
-- **C Compiler**: A C compiler like GCC (GNU Compiler Collection) is required for compiling the source code.
+- **C Compiler**: The source code must be compiled using a C compiler like GCC (GNU Compiler Collection).
 - **C++ Compiler**: A C++ compiler is necessary for compiling any C++ components.
 - **Autotools**: The GNU build system tools, including `autoconf`, `automake`, and `libtool`, are required for generating the build system files.
 - **Make**: A build automation tool to direct the build process. 
@@ -51,7 +51,7 @@ sudo yum install gtk2-devel
     cp -r slurm/ /path/to/your/slurm/
     ```
 > [!WARNING]
-> This overwrites the file `src/plugins/sched/Makefile.am`. In case you have other scheduler plugins aside from the default ones (backfill, builtin), you have to adjust this file after this step to also include the subdirectories of other plugins.
+> This overwrites the file `src/plugins/sched/Makefile.am`. In case you have other scheduler plugins besides the default ones (backfill, builtin), you have to adjust this file after this step to include the subdirectories of other plugins.
 
 2. **Navigate to the Slurm source directory:**
 
